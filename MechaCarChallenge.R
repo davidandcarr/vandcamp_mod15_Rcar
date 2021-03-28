@@ -8,12 +8,16 @@ library(dplyr)
 mechacar <- read.csv('data_raw/MechaCar_mpg.csv')
 
 linear_mech <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mechacar)
-
+linear_mech
 mech_sum <- summary(linear_mech)
+mech_sum
+
+var(mechacar$vehicle_weight)
+summary(mechacar$vehicle_weight)
 
 #i don't think this is as straightforward as the example but..
-mech_ys <- linear_mech$coefficients['mpg']*mechacar$mpg + linear_mech$coefficients['(Intercept)']
-plt <- ggplot(mechacar, aes(x=mpg, y=vehicle_weight))
+mech_ys <- linear_mech$coefficients['spoiler_angle']*mechacar$mpg + linear_mech$coefficients['(Intercept)']
+plt <- ggplot(mechacar, aes(x=mpg, y=spoiler_angle))
 plt + geom_point() + geom_line(aes(y=mech_ys), color = "red")
 #ya know, i thought this wasn't going to work, and now i know. too many variables for this to be that easy
 
@@ -57,6 +61,11 @@ lot_summary <- susp_data %>% group_by(Manufacturing_Lot) %>% summarise(Mean=mean
 
 lot_summary
 
+summary(lot3$PSI)
+var(lot3$PSI)
+
+?var
+
 
 #deliverable 3
 
@@ -70,3 +79,12 @@ lot1_psi <- lot1$PSI
 lot2_psi <- lot2$PSI
 lot3_psi <- lot3$PSI
 
+?t.test
+
+t.test(lot1_psi,mu = 1500)
+t.test(lot2_psi,mu = 1500)
+t.test(lot3_psi,mu = 1500)
+
+t.test(lot1_psi, lot2_psi)
+t.test(lot1_psi, lot3_psi)
+t.test(lot2_psi, lot3_psi)
