@@ -5,11 +5,11 @@ In this week's challenge, the client requires some critical analysis of their ma
 ## Linear Regression to Predict MPG
 In an effort to determine which design specification contributes greatest to the MechaCar's miles per gallon, the data of 50 mechacars was passed through a linear regression model. As such, our output is as follows:
 
-![linear MechaCar](src='images/mechacar_linearcoefs.png')
+![linear MechaCar](imgsrc='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/mechacar_linearcoefs.png')
 
 After relying on R to do a bit more computational heavy lifting, we can get some more clarity on the significance of the dataset provided.
 
-![Deeper summation](src='images/mechacar_linearreg.png')
+![Deeper summation](imgsrc='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/mechacar_linearreg.png')
 
 With this insight, it is already apparent that the dataset of 50 MechaCars is representative of about 70% of the units being produced. While I would prefer to get closer to 90% (perhaps with specifications of 100 cars) nearly 3 quarters of the population will have to do. Besides, this analysis also reveals some of the more important aspects of the assembly line. Judging by the infinitessimally smaller P-values of their counterparts, the p-values of the car's spoiler angle, as well as the presence of All Wheel Drive seem to have the greatest impact on its Miles Per Gallon. This is a fairly easy correlation to make, seeing as a spoiler that creates <u>more</u> drag would be detrimental to the engine's performance as it burns fuel. Similarly, an engine that is exerting double output at any given time could conceivably be less efficient than its counterpart that is only powering one axle.
 
@@ -21,7 +21,7 @@ Despite my willingness to overlook the inconsistencies, I am not willing to say 
 
 Per design specifications, MechaCars' suspension coils are not to have a variance exceeding 100lbs/sq. in. As such, let's take a look at the three manufacturing plants and determine if they are "up to code" as it were.
 
-![3plant summary](src='images/3plants.png')
+![3plant summary](src='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/3plants.png')
 
 As you can see from the data above, Lot3 seems to be severely lacking in comparison to its counterparts. The numbers are as such to make one want to cease production immediately. Without further data on Lot3's particular output and manufacturing specifications, it is hard to make a judgment call merely based on these numbers. Perhaps Lot3 is responsible for some of the unpredictability of the MPG calculations? Perhaps Lot1 and Lot2 are adhering to practices that are more dangerous, though Lot3 outputs MechaCars that are not up to design specs? Impossible to say. However, we can get more objective about the data by performing t-tests on our lot samples.
 
@@ -29,15 +29,15 @@ As you can see from the data above, Lot3 seems to be severely lacking in compari
 
 By conducting t-tests on each dataset we can learn how significant each lot's data is as a whole. Perhaps through these calculations we can shed some light on Lot3's shortcomings.
 
-![Lot1](src='images/lot1_ttest.png')
+![Lot1](src='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/lot1_ttest.png')
 
-![Lot2](src='images/lot2_ttest.png')
+![Lot2](src='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/lot2_ttest.png')
 
-![Lot3](src='images/lot3_ttest.png')
+![Lot3](src='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/lot3_ttest.png')
 
 Oddly enough, the best-performing manufacturer (Lot 1) yields a t-test that indicates its successes are almost entirely due to chance. Lot 2 is not far behind, with a p-value of 0.6, and Lot 3 comes in strong with a p-value of 0.042. Thus, as alluded previously, it is perhpas less about specifications and more about practice that these three manufacturers have such disparate data. Let's dig a little deeper by performing 2-sample tests on each of our data sets, pitting them against each other.
 
-![Ttest Summary](src='images/alllot_ttest.png')
+![Ttest Summary](src='https://github.com/davidandcarr/vandcamp_mod15_Rcar/blob/main/images/2samp_ttest.png')
 
 Curiouser and curiouser. Lots 1 and 3 have the least difference between their measurements (smallest degree of freedom) and a strong difference against chance dictating their results. Similarly, lots 2 and 3 tout the least "random" measurements as well as a high T value. MechaCar needs to get inspectors down to all of these lots as soon as possible, and start collecting some more data on each of them. In my simple opinion, the manufacturing specifications of Lot 1 and 3 should be combined.
 
