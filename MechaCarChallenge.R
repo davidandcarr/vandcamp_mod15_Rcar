@@ -60,3 +60,13 @@ lot_summary
 
 #deliverable 3
 
+#isolate datasets
+lot1 <- subset(susp_data, susp_data$Manufacturing_Lot == 'Lot1')
+lot2 <- subset(susp_data, susp_data$Manufacturing_Lot == 'Lot2')
+lot3 <- subset(susp_data, susp_data$Manufacturing_Lot == 'Lot3')
+
+#isolate numbers for tests
+lot1_psi <- lot1$PSI
+lot2_psi <- lot2$PSI
+lot3_psi <- lot3$PSI
+
